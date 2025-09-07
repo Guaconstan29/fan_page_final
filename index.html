@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8"> <!-- ESCALA EN LA QUE SE ADAPTA EL SITIO (ESTRATEGIA PARA QUE EL SITIO SEA RESPONSIVE) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fan Page Winx Club</title>
+    <link rel="stylesheet" href="styles.css"> <!-- HOJA DE ESTILOS -->
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="Personajes.html">PERSONAJES</a></li>
+                <li><a href="Capitulos.html">CAPÍTULOS</a></li>
+                <li><a href="#contacto">CONTACTO</a></li>
+            </ul>
+        </nav>
+        <h1>Mi serie fav de la infancia</h1>
+    </header>
+
+    <main>
+        <section id="presentacion">
+          <img src="imagen/winx.jpeg" alt="Winx Club" width="250">
+            <p>¡La magia está en ti!</p>
+            <p>
+                Club Winx es una serie animada sobre un grupo de hadas adolescentes que luchan contra el mal mientras descubren la magia, la amistad y su crecimiento personal.
+            </p>
+            <a href="https://es.wikipedia.org/wiki/Winx_Club" target="_blank">WikiHada</a>
+        </section>
+
+        <section id="contacto">
+            <h2>Contacto de fans</h2>
+            <form>
+        <input type="text" placeholder="Tu nombre" required> <!-- IMPUT Es un campo de entrada de datos.
+                                                               Puede ser de distintos tipos según el atributo type:
+                                                               type="text" → texto normal
+                                                               type="email" → correo electrónico
+                                                               type="password" → contraseña
+                                                               type="number" → números
+                                                               y muchos más.*/
+                                                               --placeholder muestra un texto guía dentro del campo antes de que el usuario escriba algo.-->
+        <input type="email" placeholder="Tu email" required>
+        <textarea placeholder="Escribí tu mensaje"></textarea> <!-- Es un campo de texto multilinea. Ideal para mensajes largos, comentarios o descr.-->
+        <button type="submit">Enviar</button>
+    </form>
+</section>
+    </main>
+
+    <footer>
+        <p>© 2025 Fan Page Winx - Guadi</p>
+    </footer>
+</body>
+</html>

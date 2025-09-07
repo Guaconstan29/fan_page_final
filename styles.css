@@ -1,0 +1,255 @@
+/* BASICO */
+body, h1, h2, p, ul, li {
+    margin: 5px;
+    padding: 5px; /*padding → controla el espacio interno del cuadro*/
+}
+
+/* GENERAL */
+body {
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    /*background-color: #fdf0ff;*/
+    color: #333;
+    line-height: 1.6;
+}
+
+main {
+    background-color: #ffbdf5
+}
+
+main img {
+    display: block;
+    gap: 20px;
+    justify-content: center; /* centra las cosas horizontalmente */
+    margin: 0 auto;
+    max-width: 80%;
+    height: auto;
+    border-radius: 10px;
+    top: 30px;
+
+}
+
+
+main {   /*agrego otro MAIN para darle formato a los textos debajo de la imagen sin afectar el fondo*/
+    display: flex;
+    flex-direction: column; /* uno bajo otro */
+    align-items: center;    /* CENTRA HORIXONTA */
+    text-align: center;     /* centra el texto dentro de los <p> */
+    gap: 20px;              /* espacio entre foto y texto */
+    margin-top: 160px; /* AL DEJAR EL MENU DE ARRIBA FIJO, PONGO ESTO PARA QUE NO ME TAPE LO DE BAJOdepende de 
+                            la altura de tu header */
+}
+header {
+    background-color: #e59ce3;
+    padding: 5px;
+    text-align: center;
+    color: rgb(202, 202, 202);
+    position: fixed;   /* hace que el header quede fijo (AGREGAR EN EL MAIN UN MARGIN-TOP PARA QUE NO TAPE NO DE ABJO)*/
+    top: 0;            /* lo pega arriba de la pantalla */
+    left: 0;           /* lo pega a la izquierda */
+    width: 100%;       /* ocupa todo el ancho de la ventana */
+    z-index: 1000;     /* se asegura de que quede por encima del contenido */
+}
+
+header h1 { /*HACER UN MARCO EN EL TITULO - IDENTIFICAR SEGUN EL HX*/
+    background-color: rgb(224, 163, 211);  /*color de fondo rosa */
+    padding: 10px 20px;     /*espacio dentro del cuadrito */
+    display: inline-block;   /* para que el fondo quede solo alrededor del texto */
+    border-radius: 8px;      /* esquinas redondeadas */
+    border: 2px solid hotpink;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+
+}
+
+nav ul {
+    list-style: none;
+    display: flex; /* Puedo mover */
+    justify-content: center; /*DEFINO DONDE VA A ESTAR*/
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: rgb(245, 245, 245);
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #ffe45c;
+    transform: scale(1.05);
+}
+
+h1, h2 {
+    font-family: 'Cursive', sans-serif;
+    color: #30202d;
+    margin-bottom: 10px;
+}
+
+/* Presentación */
+#presentacion {
+    text-align: center;
+    padding: 20px;
+}
+
+#presentacion img {
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    transition: 0.3s;
+    flex-wrap: wrap; /*si quiero que al achicar las fotos se adapte a la pagina para que se adapte */
+
+}
+
+#presentacion img:hover {
+    transform: scale(1.05);
+    
+}
+
+/* foto de los personajes */
+#hadas {
+    text-align: center;
+    padding: 20px;
+}
+#hadas img {
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    transition: 0.3s;
+    flex-wrap: wrap;  /*si quiero que al achicar las fotos se adapte a la pagina para que se adapte */
+    justify-content: center; /* justify-content → alinea los elementos hijos en el eje principal (horizontal si es flex normal).
+                               - flex-start → izquierda
+                               - flex-end → derecha
+                               - center → centrados
+                               - space-between → separados (extremos)
+                               - space-around → espacio igual a los costados
+                               - space-evenly → espacio idéntico entre todos */
+}
+
+#hadas img:hover {
+    transform: scale(1.05);
+}
+
+/* VIDEOO */
+.video-container {
+    display: flex;
+    justify-content: center; /* centra las cosas horizontalmente */
+    margin: 20px 0;          /* espacio arriba y abajo entre elementos */
+
+}
+/* CONTACTO*/
+#contacto form {
+    display: flex;
+    flex-direction: column; /* EFECTO COLUMNA UNO ABAJO DEL OTRO */
+    /*gap: 20px /*espacio entre cada campo (No lo uso en este caso xq me queda el campo de punta a punta) */
+    align-items: center; /*centra horizontal */
+    padding: 30px;
+
+}
+
+/* darle color al completar el texto*/
+#contacto form input, /*IMPUT Es un campo de entrada de datos.
+                       Puede ser de distintos tipos según el atributo type:
+                       type="text" → texto normal
+                        type="email" → correo electrónico
+                        type="password" → contraseña
+                        type="number" → números
+                        y muchos más.*/ 
+
+#contacto form textarea {
+    width: 80%; /* ancho de los campos */
+    padding: 10px; /* espacio interno */
+    margin-bottom: 15px; /* separación entre campos */
+    border: 2px solid #f8c3de; /* borde rosa */
+    border-radius: 8px; /* esquinas redondeadas */
+    font-size: 14px; /* tamaño de letra */
+    outline: none; /* quita el borde azul al enfocar */
+    transition: border-color 0.3s;
+}
+
+/* Cambiar color del borde al enfocar */
+#contacto form input:focus,
+#contacto form textarea:focus {
+    border-color: #ff66b2; /* rosa más intenso */
+}
+
+/* Footer */
+footer {
+    background: #b800e6;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+/* ===================== */
+/* ESTILOS RESPONSIVE    */
+/* ===================== */
+
+/* Celulares (pantallas chicas hasta 600px) */
+@media (max-width: 600px) { /* @media → sirve para aplicar estilos solo si se cumple una condición */
+                            /* (en este caso: si el ancho de la pantalla es de 600px o menos). */
+    body { 
+        font-size: 0.9rem; /* letra más chica de lo establecido*/
+    }
+
+nav ul {
+    flex-direction: column; /* cambio el menú:
+                              - antes estaba en fila (horizontal),
+                              - ahora lo pongo en columna (vertical),
+                              - lo centro y separo cada item con 10px */
+    align-items: center;
+    gap: 10px;
+}
+
+    main img {
+        max-width: 100%; /* imagen ocupa todo el ancho disponible */
+    }
+
+    #presentacion, #hadas, #contacto {
+        padding: 15px;
+    }
+
+    #contacto form input, 
+    #contacto form textarea {
+        width: 100%; /* los formularios se estiran al ancho completo del celular */
+    }
+}
+
+/* TABLETS (IGUAL QUE EL CELULAR PERO SE ESTIMA QUE SEA ENTRE 601px y 1024px) */
+@media (min-width: 601px) and (max-width: 1024px) {
+    body {
+        font-size: 1rem;
+    }
+
+    nav ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    main img {
+        max-width: 90%;
+    }
+
+    #contacto form input, 
+    #contacto form textarea {
+        width: 90%;
+    }
+}
+
+/* COMPUTADORA (más de 1025px) */
+@media (min-width: 1025px) {
+    body {
+        font-size: 1.1rem;
+    }
+
+    nav ul {
+        flex-direction: row; /* SE MANTIENE EL menú horizontal */
+        gap: 20px;
+    }
+
+    main img {
+        max-width: 70%; /* imagen más chica en escritorio */
+    }
+
+    #contacto form input, 
+    #contacto form textarea {
+        width: 70%;
+    }
+}
