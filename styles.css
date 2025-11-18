@@ -1,256 +1,227 @@
-/* BASICO */
-body, h1, h2, p, ul, li {
-    margin: 5px;
-    padding: 5px; /*padding → controla el espacio interno del cuadro*/
-}
-
 /* GENERAL */
 body {
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    /*background-color: #fdf0ff;*/
-    color: #514a4a;
-    line-height: 1.3;
-    min-height: 100vh; /* asegura que el body ocupe toda la altura visible */
-    display: flex;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f3ece4; 
+  color: #3a2a1e;
+}
+
+/* M.o.*/
+body.oscuro {
+  background: #180a01;
+  color: #c9c4c1;
+}
+
+/* ENCABEZADO */
+#encabezado {
+  background: #e6acba;
+  color: #434241;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+}
+
+#encabezado .espacio {
+  flex: 1;
+}
+
+#encabezado h1 {
+  flex: 1;
+  text-align: center;
+  margin: 0;
+}
+
+body.oscuro #encabezado {
+  background: #390327;
+  color: #f6e7df;
+}
+
+#botonModo {
+  background: #dfd1d6;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 5px;
+  color: #3b3835;
+}
+
+body.oscuro #botonModo {
+  background: #420a3e;
+  color: #fff;
+}
+
+#tarjeta {
+  background: #ebced4;
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #e8ddd6;
+}
+
+body.oscuro #tarjeta {
+  background: #4a1d37;
+  border: 4px solid #1d0619;
+}
+
+#foto {
+  width: 180px;   
+  height: 180px;    
+  border-radius: 50%;
+  margin: 0 auto;
+  border: 4px solid #a8769e;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+body.oscuro #foto {
+     border-color: #420a3e
+}
+
+#datos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.caja-dato {
+  background: #ffeaef;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #fec0ce;
+}
+
+body.oscuro .caja-dato {
+  background: #39032e;
+  border: 1px solid #45032bd3;
+}
+
+.titulo-dato {
+  font-size: 0.8rem;
+  color: #000000;
+  font-weight: bold;
+}
+
+body.oscuro .titulo-dato {
+  color: #fffaf7;
+}
+
+.info-dato {
+  font-size: 1rem;
+  margin-top: 4px;
+}
+
+#proyectos {
+  display: flex;
+  justify-content: center;    
+  gap: 25px;                  
+  margin-top: 25px;
+  flex-wrap: wrap;
+}
+
+
+.proyecto {
+  width: 280px;               
+  background: #ffeaef;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  border: 1px solid #f8afc0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  height: 360px;            
+}
+
+body.oscuro .proyecto {
+  background: #39032e;
+  border: 1px solid #4b1841;
+}
+
+.img-proyecto {
+  width: 100%;
+  height: 180px;  
+  border-radius: 6px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-proyecto img {
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+}
+
+body.oscuro .img-proyecto {
+  background: #541a4961;
+}
+.texto-proyecto {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #3a2a1e;
+}
+
+body.oscuro .texto-proyecto {
+  color: #f2e9e3;
+}
+
+.proyecto a {
+  margin-top: auto;
+  padding: 10px 0;
+  width: 120px;             
+  background: #e1758e;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  text-align: center;
+  display: block;
+}
+
+body.oscuro .proyecto a {
+  background: #5e143b;
+}
+
+/* FOOTER */
+#pie {
+  text-align: center;
+  padding: 12px;
+  color: #3e3e3e;
+}
+
+body.oscuro #pie {
+  color: #fff1e9;
+}
+
+@media (max-width: 700px) {
+  #datos {
+    grid-template-columns: 1fr;
+  }
+
+  #proyectos {
     flex-direction: column;
-
-}
-
-
-main img {
-    display: block;
-   /* justify-content: center; /* centra las cosas horizontalmente */
-    margin: auto;
-    border-radius: 10px;
-
-}
-
-main {   /*agrego otro MAIN para darle formato a los textos debajo de la imagen sin afectar el fondo*/
-
-    background-color: #f9ddf4;     
-    display: flex;
-    flex-direction: column; /* uno bajo otro */
-    align-items: center;    /* CENTRA HORIXONTA */
-    text-align: center;     /* centra el texto dentro de los <p> */
-    gap: 10px;              /* espacio entre foto y texto */
-    padding-top: 160px;  /* reemplazo el margin-top por padding para que no genere espacio blanco */          /* lo pega arriba de la pantalla */
-    left: 0;           /* lo pega a la izquierda */
-    width: 100%;          /* lo pega a la izquierda */
-    flex: 1; /* hace que el main ocupe todo el espacio disponible entre header y footer */
-}
-header {
-    background-color: #e1b6d5;
-    padding: 5px;
-    text-align: center;
-    color: rgb(202, 202, 202);
-    position: fixed;   /* hace que el header quede fijo (AGREGAR EN EL MAIN UN MARGIN-TOP PARA QUE NO TAPE NO DE ABJO)*/
-    top: 0;            /* lo pega arriba de la pantalla */
-    left: 0;           /* lo pega a la izquierda */
-    width: 100%;       /* ocupa todo el ancho de la ventana */
-    z-index: 1000;     /* se asegura de que quede por encima del contenido */
-}
-
-header h1 { /*HACER UN MARCO EN EL TITULO - IDENTIFICAR SEGUN EL HX*/
-    background-color: rgb(232, 191, 223);  /*color de fondo rosa */
-    font-size: 1.5rem;
-    padding: 5px 10px;     /*espacio dentro del cuadrito */
-    display: inline-block;   /* para que el fondo quede solo alrededor del texto */
-    border-radius: 8px;      /* esquinas redondeadas */
-    border: 2px solid rgb(200, 171, 185);
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
-
-}
-
-nav ul {
-    list-style: none;
-    display: flex; /* Puedo mover */
-    justify-content: center; /*DEFINO DONDE VA A ESTAR*/
-    gap: 10px;
-}
-
-nav a {
-    text-decoration: none;
-    color: rgb(245, 245, 245);
-    font-weight: bold;
-    transition: color 0.3s;
-}
-
-nav a:hover {
-    color: #ffe45c;
-    transform: scale(1.05);
-}
-
-h1, h2 {
-    font-family: 'Cursive', sans-serif;
-    color: #584955;
-    margin-bottom: 5px;
-}
-
-/* Presentación */
-#presentacion {
-    text-align: center;
-    padding: 20px;
-}
-
-#presentacion img {
-    box-shadow: 0 0 10px rgba(0,0,0,0.3);
-    transition: 0.3s;
-    flex-wrap: wrap; /*si quiero que al achicar las fotos se adapte a la pagina para que se adapte */
-
-}
-
-#presentacion img:hover {
-    transform: scale(1.05);
-    
-}
-
-/* foto de los personajes */
-#hadas {
-    text-align: center;
-    padding: 20px;
-}
-#hadas img {
-    box-shadow: 0 0 10px rgba(0,0,0,0.3);
-    transition: 0.3s;
-    flex-wrap: wrap;  /*si quiero que al achicar las fotos se adapte a la pagina para que se adapte */
-    justify-content: center; /* justify-content → alinea los elementos hijos en el eje principal (horizontal si es flex normal).
-                               - flex-start → izquierda
-                               - flex-end → derecha
-                               - center → centrados
-                               - space-between → separados (extremos)
-                               - space-around → espacio igual a los costados
-                               - space-evenly → espacio idéntico entre todos */
-}
-
-#hadas img:hover {
-    transform: scale(1.05);
-}
-
-/* VIDEOO */
-.video-container {
-    display: flex;
-    justify-content: center; /* centra las cosas horizontalmente */
-    margin: 20px 0;          /* espacio arriba y abajo entre elementos */
-
-}
-/* CONTACTO*/
-#contacto form {
-    display: flex;
-    flex-direction: column; /* EFECTO COLUMNA UNO ABAJO DEL OTRO */
-    /*gap: 20px /*espacio entre cada campo (No lo uso en este caso xq me queda el campo de punta a punta) */
-    align-items: center; /*centra horizontal */
-    padding: 30px;
-
-}
-
-/* darle color al completar el texto*/
-#contacto form input, /*IMPUT Es un campo de entrada de datos.
-                       Puede ser de distintos tipos según el atributo type:
-                       type="text" → texto normal
-                        type="email" → correo electrónico
-                        type="password" → contraseña
-                        type="number" → números
-                        y muchos más.*/ 
-
-#contacto form textarea {
-    width: 80%; /* ancho de los campos */
-    padding: 10px; /* espacio interno */
-    margin-bottom: 15px; /* separación entre campos */
-    border: 2px solid #f8c3de; /* borde rosa */
-    border-radius: 8px; /* esquinas redondeadas */
-    font-size: 14px; /* tamaño de letra */
-    outline: none; /* quita el borde azul al enfocar */
-    transition: border-color 0.3s;
-}
-
-/* Cambiar color del borde al enfocar */
-#contacto form input:focus,
-#contacto form textarea:focus {
-    border-color: #ff66b2; /* rosa más intenso */
-}
-
-/* Footer */
-footer {
-    background-color: #e1b6d5;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    margin-top: 0; /* quitamos el margen superior que generaba el espacio blanco */
-}
-
-/* ===================== */
-/* ESTILOS RESPONSIVE    */
-/* ===================== */
-
-/* Celulares (pantallas chicas hasta 600px) */
-@media (max-width: 600px) { /* @media → sirve para aplicar estilos solo si se cumple una condición */
-                            /* (en este caso: si el ancho de la pantalla es de 600px o menos). */
-    body { 
-        font-size: 0.9rem; /* letra más chica de lo establecido*/
-    }
-
-nav ul {
-    flex-direction: column; /* cambio el menú:
-                              - antes estaba en fila (horizontal),
-                              - ahora lo pongo en columna (vertical),
-                              - lo centro y separo cada item con 10px */
     align-items: center;
-    gap: 10px;
-}
+  }
 
-    main img {
-        max-width: 100%; /* imagen ocupa todo el ancho disponible */
-    }
+  .proyecto {
+    width: 90%;
+    height: auto;
+  }
 
-    #presentacion, #hadas, #contacto {
-        padding: 15px;
-    }
-
-    #contacto form input, 
-    #contacto form textarea {
-        width: 100%; /* los formularios se estiran al ancho completo del celular */
-    }
-}
-
-/* TABLETS (IGUAL QUE EL CELULAR PERO SE ESTIMA QUE SEA ENTRE 601px y 1024px) */
-@media (min-width: 601px) and (max-width: 1024px) {
-    body {
-        font-size: 1rem;
-    }
-
-    nav ul {
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 15px;
-    }
-
-    main img {
-        max-width: 90%;
-    }
-
-    #contacto form input, 
-    #contacto form textarea {
-        width: 90%;
-    }
-}
-
-/* COMPUTADORA (más de 1025px) */
-@media (min-width: 1025px) {
-    body {
-        font-size: 1.1rem;
-    }
-
-    nav ul {
-        flex-direction: row; /* SE MANTIENE EL menú horizontal */
-        gap: 20px;
-    }
-
-    main img {
-        max-width: 70%; /* imagen más chica en escritorio */
-    }
-
-    #contacto form input, 
-    #contacto form textarea {
-        width: 70%;
-    }
+  .img-proyecto {
+    height: 200px;
+  }
 }
